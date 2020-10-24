@@ -1,0 +1,61 @@
+.block {
+	position: absolute;
+    top:45%;
+    left:23%;
+	width: 500px;
+    height: 250px;
+    text-align: center;
+    margin:0 40px;
+	background: linear-gradient(0deg, lightcyan, lightgrey);
+}
+
+.block:before, .block:after {
+	content: '';
+	position: absolute;
+	left: -8px;
+	top: -8px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 15px);
+	height: calc(100% + 15px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.block:after {
+	filter: blur(10px);
+}
+@media screen and (min-width:500px) {
+    .block{
+        width: 400px;
+        position: absolute;
+        left: 0;
+    }
+}
+@media screen and (min-width:550px) {
+    .block{
+        width: 450px;
+        position: absolute;
+        left: 8%;
+    }
+}
+@media screen and (min-width:768px) {
+    .block{
+        width: 500px;
+        position: absolute;
+        left: 24%;
+    }
+}
